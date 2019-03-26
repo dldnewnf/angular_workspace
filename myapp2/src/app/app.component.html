@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<app-hero-detail></app-hero-detail>
+
+<h2>영웅 목록</h2>
+<ul>
+  <li *ngFor = "let person of heros" (click) = "onSelect(person)">
+    {{person.id}}&nbsp;&nbsp;{{person.name}}
+  </li>
+</ul>
+<br><br>
+<!--[hero] 입력을 받는 컴포넌트 쪽 변수
+selectedHero : 입력을 주는쪽 컴포넌트 변수-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

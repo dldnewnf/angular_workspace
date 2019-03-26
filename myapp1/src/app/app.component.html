@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!  <!--컴포넌트의 클래스의 변수-->
+  </h1>
+  <h2>{{contents}}</h2>
+</div>
+<div>
+  <h2 class = "style1">나의 영웅</h2>
+  <h3>{{myHero.id}} : {{myHero.name}} : {{myHero.description}}</h3>
+</div>
+<div>
+  <h2 class ="style1">연동하기</h2>
+    <label>id : </label>{{myHero.id}}
+    <label>name : </label>
+    <input type="text" [(ngModel)]="myHero.name">
+    <label>name : </label>
+    <input type="text" [(ngModel)]="myHero.description">
+</div>
+
+<div>
+  <h2>나의 영웅은 {{hero2.name}}입니다.</h2>
+    <input type ="text" [(ngModel)]="hero2.name" placeholder="이름을 입력하세요">
+</div>
+
+<div>
+  <h2>나의 영웅 목록</h2>
+  <ul>
+    <li *ngFor="let person of heros" (click) = "onSelect(person)">
+      {{person.id}} {{person.name}} {{person.description}}
+    </li>
+  </ul>
+</div>
+<div *ngIf="selectedHero"> 
+  <h2>선택된 항목입니다.</h2>
+  <h2>{{selectedHero.id}}</h2>
+  <h2>{{selectedHero.name}}</h2>
+  <h2>{{selectedHero.description}}</h2>
+</div>

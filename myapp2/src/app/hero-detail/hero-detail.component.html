@@ -1,0 +1,13 @@
+<p>
+  hero-detail works!<br>
+  목록 선택했을때 이 페이지에서 상세 내용을 내보내니다.
+</p>
+<div *ngIf="hero">
+  <h2>{{hero.name}} 상세정보</h2>
+  <div>id : {{hero.id}}</div>
+  <div>name : {{hero.name}}</div>
+  <div>description : {{hero.description}}</div>
+
+  이름 : <input [(ngModel)] = "hero.name"><br>
+  상세 정보 : <input [(ngModel)] = "hero.description"><br>
+</div>
