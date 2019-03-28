@@ -1,0 +1,12 @@
+<div>
+  <h1>나의 영웅들</h1>
+  <ul class="heroes"> 
+    <li *ngFor ="let hero of heros" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> <span class="badge">{{hero.id}}</span>{{hero.name}}</li>
+  </ul>
+</div>
+<!-- hero-detail 컴포넌트를 여기에 위치 시킨다
+     선택 변수값도 전달하고
+-->
+<br>
+
+<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
